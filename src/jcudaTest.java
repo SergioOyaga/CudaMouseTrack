@@ -132,11 +132,13 @@ public class jcudaTest
         // Window listener to dispose Kernel resources on user exit
         frame.addWindowListener(new WindowAdapter(){
             public void windowClosing(WindowEvent _windowEvent) {
+                /* //Uncomment to store an image in the closing
                 try {
                     saveToFile(image);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+                */
                 // Clean up.
                 cuMemFree(deviceInputPalette);
                 cuMemFree(deviceInputTrailX);
