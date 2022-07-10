@@ -4,6 +4,7 @@ import jcuda.driver.*;
 import jcuda.nvrtc.JNvrtc;
 import jcuda.nvrtc.nvrtcProgram;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -12,6 +13,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static java.lang.Math.min;
@@ -129,6 +132,11 @@ public class jcudaTest
         // Window listener to dispose Kernel resources on user exit
         frame.addWindowListener(new WindowAdapter(){
             public void windowClosing(WindowEvent _windowEvent) {
+                try {
+                    saveToFile(image);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 // Clean up.
                 cuMemFree(deviceInputPalette);
                 cuMemFree(deviceInputTrailX);
@@ -157,5 +165,9 @@ public class jcudaTest
             trailLastUpdatedPosition++;
             mousePosition2=mousePosition;
         }
+    }
+    public static void saveToFile (BufferedImage img) throws IOException {
+        jcudaTest.class.getClassLoader().getName();
+        ImageIO.write(img, "png", new File("out/image/Frame_Image.png"));
     }
 }
