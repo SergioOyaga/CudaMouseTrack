@@ -6,7 +6,6 @@ import jcuda.nvrtc.nvrtcProgram;
 
 import javax.swing.*;
 
-import java.awt.*;
 import java.io.IOException;
 
 import static jcuda.driver.JCudaDriver.*;
@@ -64,7 +63,7 @@ public class ColorKernel {
     }
 
     public static CUfunction computeKernelFunction(String cudaFileName, String functionName) throws IOException {
-        String programSourceCode = new String(jcudaTest.class.getClassLoader().getResourceAsStream(cudaFileName).readAllBytes());
+        String programSourceCode = new String(JcudaTest.class.getClassLoader().getResourceAsStream(cudaFileName).readAllBytes());
         // Retrieve program source code as string
         //new String(Files.readAllBytes(Paths.get(new File("").getAbsolutePath()+"/resources/"+cudaFileName)));
         // Enable exceptions and omit all subsequent error checks

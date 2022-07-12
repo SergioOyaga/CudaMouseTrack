@@ -1,8 +1,6 @@
 import jcuda.Pointer;
 import jcuda.Sizeof;
 import jcuda.driver.*;
-import jcuda.nvrtc.JNvrtc;
-import jcuda.nvrtc.nvrtcProgram;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -14,18 +12,16 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static java.lang.Math.min;
 import static jcuda.driver.JCudaDriver.*;
-import static jcuda.nvrtc.JNvrtc.*;
 
 /**
  * An example showing how to use the NVRTC (NVIDIA Runtime Compiler) API
  * to compile CUDA kernel code at runtime.
  */
-public class jcudaTest
+public class JcudaTest
 {
     public static volatile Point mousePosition = new Point(0,0); // to update the new position and paint accordingly
     public static volatile Point mousePosition2 =  new Point(0,0); // to send the Swing thread to sleep if the mouse is not moving
@@ -169,7 +165,6 @@ public class jcudaTest
         }
     }
     public static void saveToFile (BufferedImage img) throws IOException {
-        jcudaTest.class.getClassLoader().getName();
         ImageIO.write(img, "png", new File("out/image/Frame_Image.png"));
     }
 }

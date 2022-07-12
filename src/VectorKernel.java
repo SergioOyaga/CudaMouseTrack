@@ -1,11 +1,7 @@
 import jcuda.Pointer;
-import jcuda.Sizeof;
 import jcuda.driver.*;
-import jcuda.nvrtc.JNvrtc;
 import jcuda.nvrtc.nvrtcProgram;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 
 import static jcuda.driver.JCudaDriver.*;
@@ -62,7 +58,7 @@ public class VectorKernel {
      * @throws IOException
      */
     public static CUfunction computeKernelFunction(String cudaFileName, String functionName) throws IOException {
-        String programSourceCode = new String(jcudaTest.class.getClassLoader().getResourceAsStream(cudaFileName).readAllBytes());
+        String programSourceCode = new String(JcudaTest.class.getClassLoader().getResourceAsStream(cudaFileName).readAllBytes());
 
         // Use the NVRTC to create a program by compiling the source code
         nvrtcProgram program = new nvrtcProgram();
