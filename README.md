@@ -10,7 +10,7 @@ This project is an example of CUDA programming using Java and de NVIDIA Runtime 
 
 * [Introduction](#introduction)
 * [Java classes](#java-classes)
-    * [JcudaTest](#jCudaTest)
+    * [JcudaMouseTracker](#jCudaTest)
     * [ColorKernel](#colorKernel)
     * [VectorKernel](#vectorKernel)
 * [CUDA kernels](#cuda-kernels)
