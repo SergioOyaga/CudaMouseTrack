@@ -4,8 +4,7 @@ A basic example and demonstration on what a JCuda program looks like. :octocat: 
 This project is an example of CUDA programming using Java and de NVIDIA Runtime Compiler (NVRTC).
 
 <figure>
-<img src="https://github.com/SergioOyaga/CudaMouseTrack/blob/master/out/image/MouseTracker-2022-07-10-14-21-17.gif"  title="Mouse Track Example" alt="Mouse Track Example" width="400" height="400" />
-<img src="https://github.com/SergioOyaga/CudaMouseTrack/blob/master/out/image/MouseTracker-2022-07-25-18-07-30.gif"  title="Mouse Track Example With Spline" alt="Mouse Track Example With Spline" width="400" height="400" />
+<img src="https://github.com/SergioOyaga/CudaMouseTrack/blob/master/out/image/MouseTracker-2022-07-10-14-21-17.gif"  title="Mouse Track Example" alt="Mouse Track Example" width="400" height="400" /> <img src="https://github.com/SergioOyaga/CudaMouseTrack/blob/master/out/image/MouseTracker-2022-07-25-18-07-30.gif"  title="Mouse Track Example With Spline" alt="Mouse Track Example With Spline" width="400" height="400" />
 <figcaption> Mouse Track Example using JCuda and Mouse Track Example using JCuda with Spline interpolation. </figcaption>
 </figure>
 
