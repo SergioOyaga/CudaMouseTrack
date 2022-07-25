@@ -13,9 +13,11 @@ This project is an example of CUDA programming using Java and de NVIDIA Runtime 
 
 * [Introduction](#introduction)
 * [Java classes](#java-classes)
-    * [JcudaMouseTracker](#jCudaTest)
+    * [JcudaMouseTracker](#jCudaMouseTracker)
+    * [JcudaMouseTrackerSpline](#jCudaMouseTrackerSpline)
     * [ColorKernel](#colorKernel)
     * [VectorKernel](#vectorKernel)
+    * [Spline](#spline)
 * [CUDA kernels](#cuda-kernels)
     * [JCudaColorChanger](#JCudaColorChanger)
     * [JCudaVectorValueEdition](#JCudaVectorValueEdition)
@@ -63,12 +65,20 @@ Notice that we tried to left behind the C code style and implement a more Java f
 For the sake of simplicity, although some code could be implemented in abstract classes, 
 with private methods and all the OOP stuff, we kept it as simple as possible even with redundant code.
 
-### JCudaTest
-This is the main class. Here we define the problem parameters, initialize constants and verctors, and create the kernels 
+### JcudaMouseTracker
+This is the main class. Here we define the problem parameters, initialize constants and vectors, and create the kernels 
 objects.
 
 Here is also implemented the infinite loop where a thread is waiting for be awakened. This loop runs the kernel, and it 
 is triggered by a mouse motion event.
+A closing event is also captured to free GPU reserved memory.
+
+### JcudaMouseTrackerSpline
+This is the main class. Here we define the problem parameters, initialize constants and vectors, and create the kernels
+objects.
+
+Here is also implemented the infinite loop where a thread is waiting for be awakened. This loop runs the kernel, and it
+is triggered by a mouse motion event. Onece the even is alerted, the interpolation of points take place.
 A closing event is also captured to free GPU reserved memory.
 
 ### ColorKernel
@@ -79,9 +89,16 @@ In addition, this class (not like the [VectorKernel](#vectorkernel)) is in charg
 context (for the GPU) there the module programs will run.
 
 This class objective is to compute the color of each pixel of our image (AKA vector).
+
 ### VectorKernel
 It is a container class. The cuda characteristics such as grid/block sizes and cuda's function is stored to be launched
 by a  runKernel method.
+
+This class objective is to change in place the value of vector position directly in the GPU/CPU shared memory.
+
+### Spline
+This class contains the methods to create a cubic spline interpolator. It allows the user to interpolate directly using 
+a static method, or an object of the class can be instantiated to call a method to interpolate new values.
 
 This class objective is to change in place the value of vector position directly in the GPU/CPU shared memory.
 
