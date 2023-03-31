@@ -6,7 +6,10 @@ import jcuda.nvrtc.nvrtcProgram;
 
 import javax.swing.*;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import static jcuda.driver.JCudaDriver.*;
 import static jcuda.driver.JCudaDriver.cuMemcpyDtoH;
@@ -30,7 +33,7 @@ public class ColorKernel {
      * It reads a Cuda file "example.cu".
      * IMPORTANT!!!!! We Be careful with the path. By default, is referred to resources.
      * @param cudaFileName : cuda filename string "example.cu".
-     * @param functionName : Name of the function, tipically the same as in the .cu file function.
+     * @param functionName : Name of the function, typically the same as in the .cu file function.
      * @throws IOException
      */
     public ColorKernel(String cudaFileName, String functionName) throws IOException {
@@ -65,7 +68,7 @@ public class ColorKernel {
     public static CUfunction computeKernelFunction(String cudaFileName, String functionName) throws IOException {
         String programSourceCode = new String(JcudaMouseTracker.class.getClassLoader().getResourceAsStream(cudaFileName).readAllBytes());
         // Retrieve program source code as string
-        //new String(Files.readAllBytes(Paths.get(new File("").getAbsolutePath()+"/resources/"+cudaFileName)));
+        new String(Files.readAllBytes(Paths.get(new File("").getAbsolutePath()+"/resources/"+cudaFileName)));
         // Enable exceptions and omit all subsequent error checks
         JCudaDriver.setExceptionsEnabled(true);
         JNvrtc.setExceptionsEnabled(true);

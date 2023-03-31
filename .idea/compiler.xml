@@ -9,8 +9,5 @@
         <module name="CudaMouseTrack" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="CudaMouseTrack" target="18" />
-    </bytecodeTargetLevel>
   </component>
 </project>
