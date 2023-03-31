@@ -68,7 +68,7 @@ public class ColorKernel {
     public static CUfunction computeKernelFunction(String cudaFileName, String functionName) throws IOException {
         String programSourceCode = new String(JcudaMouseTracker.class.getClassLoader().getResourceAsStream(cudaFileName).readAllBytes());
         // Retrieve program source code as string
-        new String(Files.readAllBytes(Paths.get(new File("").getAbsolutePath()+"/resources/"+cudaFileName)));
+        //new String(Files.readAllBytes(Paths.get(new File("").getAbsolutePath()+"/resources/"+cudaFileName)));
         // Enable exceptions and omit all subsequent error checks
         JCudaDriver.setExceptionsEnabled(true);
         JNvrtc.setExceptionsEnabled(true);
