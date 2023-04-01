@@ -91,7 +91,7 @@ It is a container class. The cuda characteristics such as grid/block sizes and c
 by a  runKernel method.
 
 In addition, this class (not like the [VectorKernel](#vectorkernel)) is in charge of set the cuda exceptions and the cuda
-context (for the GPU) there the module programs will run.
+context (for the GPU) where the module programs will run.
 
 This class objective is to compute the color of each pixel of our image (AKA vector).
 
